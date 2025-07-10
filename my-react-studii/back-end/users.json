@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Maxim",
+        "password": "123456789",
+        "email": "maxim.chistol@iss.utm.md",
+        "state": "Masculin"
+    },
+    {
+        "name": "CHISTOL MAXIM",
+        "password": "123456789987654321",
+        "email": "chistol.max2004@gmail.com",
+        "state": "Masculin"
+    }
+]
