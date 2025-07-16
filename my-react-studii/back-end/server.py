@@ -39,8 +39,23 @@ def add_user():
     save_users(users)
     return jsonify({'message': 'Utilizator adăugat cu succes'}), 201
 
+@app.route('/login', methods=['POST'])
+def login ():
+    users = load_users()
+    data = request.get_json()
+    
+    name = data.get('name')
+    password = data.get('password')
+    
+    for user in users:
+        if user['name'] == name and user['password'] == password:
+            return jsonify({'message': 'Login reusit'}), 200
+        
+    return jsonify({'error':'Nume sau parola incorecte'}),401
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
     print("Serverul rulează pe portul 5000")
     print("Accesați http://localhost:5000 pentru a interacționa cu API-ul")
+    
     

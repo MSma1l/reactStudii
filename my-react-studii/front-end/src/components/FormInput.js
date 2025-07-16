@@ -61,6 +61,10 @@ class FormInput extends React.Component {
           email: "",
           state: ""
         });
+        setTimeout(()=> {
+          this.props.navigate("/");
+        },1000);
+
       } else {
         const errorData = await response.json();
         document.getElementById("error").innerHTML = errorData.message || "Eroare la înregistrare!";
@@ -68,14 +72,6 @@ class FormInput extends React.Component {
     } catch (error) {
       document.getElementById("error").innerHTML = "Eroare de rețea!";
     }
-    //     // Resetarea formularului după trimitere
-    // this.setState({
-    //   name: "",
-    //   password: "",
-    //   repass: "",
-    //   email: "",
-    //   state: ""
-    // });
   }
 
   render() {
@@ -96,7 +92,7 @@ class FormInput extends React.Component {
             <label htmlFor="male">Masculin</label>
             <input type="radio" name="state" id="female" value="Femenin" checked={this.state.state === "Femenin"} onChange={(e) => this.setState({state:e.target.value})}/>
             <label htmlFor="female">Femenin</label><br /><br />
-            <div><span id="info-log">Deja aveți cont? Atunci <a  id ="info-log-link" href="<FormInput />">pagina de logare</a></span></div>
+            <div><span id="info-log">Deja aveți cont? Atunci <a  id ="info-log-link" onClick={()=> this.props.navigate("/")}>pagina de logare</a></span></div>
             <div><span id="error"></span></div>
             <input type="submit"  value = "Submit" name="submit" />
         </form>
