@@ -12,9 +12,6 @@ class App extends React.Component {
       <Router>
         <div id="container">
 
-          <nav>
-            <Link to="/">Logare</Link> | <Link to="/login">Register</Link>
-          </nav>
 
           <main>
             <Routes>
