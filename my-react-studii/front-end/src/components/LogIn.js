@@ -1,5 +1,6 @@
 import React from 'react';
 import './CSS/log.css'; 
+import { useNavigate } from 'react-router-dom';
 
 class Login extends React.Component {
 
@@ -41,6 +42,7 @@ class Login extends React.Component {
           name: "",
           password: ""
         });
+        this.props.navigate("/AppHomeWrapper");
       } else {
         document.getElementById("error").innerHTML = result.message ||"Login eșuat! Verificați numele și parola.";
       }
@@ -51,7 +53,7 @@ class Login extends React.Component {
   render() {
     return (
       <div id="main-login">
-        <form id="main-login-form" onSubmit={this.handleSubmit}>
+        <form id="main-login-form" onSubmit={this.handleSubmit }>
           <span id="login">Login</span><br /><br />
 
           <label htmlFor="name">Name:</label><br />

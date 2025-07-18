@@ -1,13 +1,22 @@
 import React from 'react';
 import './CSS/header.css';
+// import logo from './ImgComponents/logo.png';
 
 class Header extends React.Component {
   render () {
   return (
     <header className='header'>
       <div id="header-content">
-        <h1 id="title">Register</h1>
-        <p id="subtitle">Vă rugăm să completați formularul de mai jos pentru a vă înregistra.</p>
+        <div className="logo">
+          <img src="logo" alt="Logo" />
+        </div>
+        <div className="nav-links">
+          <nav>
+            <link to="/Home">Home</link>
+            <link to="/Portofolio">Portofolio</link>
+            <link to="/Experients">Experients</link>
+          </nav>
+        </div>
       </div>
     </header>   
     
